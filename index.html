@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Workflow - Created by Manjunath</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #4c4cff;
+            --secondary-color: #f4f4f9;
+            --accent-color: #ff4c4c;
+            --tooltip-bg: rgba(0, 0, 0, 0.8);
+            --transition-speed: 0.3s;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            overflow-x: hidden;
+            background-color: #111;
+            color: #fff;
+        }
+
+        /* Parallax Background */
+        .parallax-bg {
+            background-image: url('/mnt/data/image.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+        .parallax-bg h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            animation: fadeIn 2s ease;
+        }
+        .parallax-bg p {
+            font-size: 1.2em;
+            animation: fadeIn 2.5s ease;
+        }
+
+        /* Sticky Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            transition: background var(--transition-speed);
+        }
+        .header h1 {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        /* Workflow Section */
+        .workflow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ff4c4c, #4c4cff);
+            justify-content: center;
+            position: relative;
+        }
+        .workflow::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* Tool Boxes */
+        .tool {
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(135deg, #111, #444);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s, box-shadow 0.4s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .tool:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+        .tool span {
+            z-index: 1;
+            font-weight: bold;
+        }
+        .tool::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.7));
+            transform: rotate(45deg);
+            transition: opacity 0.4s ease;
+            opacity: 0;
+            z-index: 0;
+        }
+        .tool:hover::before {
+            opacity: 1;
+        }
+
+        /* Tooltip */
+        .tool .tooltip {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--tooltip-bg);
+            color: var(--secondary-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+            white-space: nowrap;
+        }
+        .tool:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #222;
+            font-size: 1em;
+            color: #ccc;
+        }
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Parallax Background Section -->
+    <section class="parallax-bg">
+        <div>
+            <h1>Welcome to Manjunath's DevOps Workflow</h1>
+            <p>Explore the Dynamic World of DevOps Tools in Motion!</p>
+        </div>
+    </section>
+
+    <!-- Sticky Header -->
+    <header class="header">
+        <h1>DevOps Tools Workflow</h1>
+    </header>
+    
+    <!-- Workflow Section -->
+    <section class="workflow">
+        <div class="tool"><span>Git</span><div class="tooltip">Version Control with Git</div></div>
+        <div class="tool"><span>GitHub</span><div class="tooltip">SCM with GitHub</div></div>
+        <div class="tool"><span>Bitbucket</span><div class="tooltip">SCM with Bitbucket</div></div>
+        <div class="tool"><span>Maven</span><div class="tooltip">Build Java Applications</div></div>
+        <div class="tool"><span>Java</span><div class="tooltip">Development with Java</div></div>
+        <div class="tool"><span>Node.js</span><div class="tooltip">Development with Node.js</div></div>
+        <div class="tool"><span>PHP</span><div class="tooltip">Development with PHP</div></div>
+        <div class="tool"><span>SonarQube</span><div class="tooltip">Static Code Analysis</div></div>
+        <div class="tool"><span>Nexus</span><div class="tooltip">Artifact Management</div></div>
+        <div class="tool"><span>Jenkins</span><div class="tooltip">CI/CD Automation</div></div>
+        <div class="tool"><span>Bitbucket Pipelines</span><div class="tooltip">CI/CD with Bitbucket</div></div>
+        <div class="tool"><span>GitHub Actions</span><div class="tooltip">CI/CD with GitHub</div></div>
+        <div class="tool"><span>Ansible</span><div class="tooltip">Configuration Management</div></div>
+        <div class="tool"><span>ArgoCD</span><div class="tooltip">Continuous Delivery</div></div>
+        <div class="tool"><span>Terraform</span><div class="tooltip">IaC with Terraform</div></div>
+        <div class="tool"><span>Terragrunt</span><div class="tooltip">IaC with Terragrunt</div></div>
+        <div class="tool"><span>Docker</span><div class="tooltip">Containerization with Docker</div></div>
+        <div class="tool"><span>Kubernetes</span><div class="tooltip">Container Orchestration</div></div>
+        <div class="tool"><span>Prometheus</span><div class="tooltip">Monitoring with Prometheus</div></div>
+        <div class="tool"><span>Grafana</span><div class="tooltip">Visualization with Grafana</div></div>
+        <div class="tool"><span>Loki</span><div class="tooltip">Log Aggregation with Loki</div></div>
+        <div class="tool"><span>Promtail</span><div class="tooltip">Log Collection with Promtail</div></div>
+        <div class="tool"><span>cAdvisor</span><div class="tooltip">Container Metrics with cAdvisor</div></div>
+        <div class="tool"><span>VS Code</span><div class="tooltip">Development with VS Code</div></div>
+        <div class="tool"><span>Postman</span><div class="tooltip">API Testing with Postman</div></div>
+        <div class="tool"><span>pgAdmin4</span><div class="tooltip">Database Management</div></div>
+        <div class="tool"><span>AWS CLI v2</span><div class="tooltip">Manage AWS Resources</div></div>
+        <div class="tool"><span>PostgreSQL 16</span><div class="tooltip">Database with PostgreSQL</div></div>
+        <div class="tool"><span>OpenLens</span><div class="tooltip">Kubernetes Management</div></div>
+        <div class="tool"><span>Kubectl</span><div class="tooltip">Kubernetes CLI</div></div>
+        <div class="tool"><span>Helm</span><div class="tooltip">Kubernetes Package Manager</div></div>
+        <div class="tool"><span>Kong Gateway</span><div class="tooltip">API Management</div></div>
+        <div class="tool"><span>Keycloak</span><div class="tooltip">Identity Management</div></div>
+        <div class="tool"><span>Istio</span><div class="tooltip">Service Mesh with Istio</div></div>
+        <div class="tool"><span>Consul</span><div class="tooltip">Service Discovery</div></div>
+        <div class="tool"><span>AWS WAF</span><div class="tooltip">Web Application Firewall</div></div>
+        <div class="tool"><span>WinSCP</span><div class="tooltip">File Transfer with WinSCP</div></div>
+        <div class="tool"><span>WSL</span><div class="tooltip">Linux on Windows</div></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>Get in touch with me:</p>
+        <p>
+            <a href="https://github.com/manju65char" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
+            <a href="https://www.linkedin.com/in/manjunathacharkt" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </p>
+        <p>Created by Manjunath, The DevOps Developer</p>
+    </footer>
+</body>
+</html>
